@@ -95,15 +95,3 @@ for i in range(len(testData)):
         correctPredictions += 1
 
 print("% Correct predictions: ", (correctPredictions * 100 / len(testData)))
-# fig, ax = plt.subplots()
-# colors = ["b", "r", "g", "k", "c", "m"]
-# for i in range(0, numSamples):
-#     sampleData = scores[i]
-#     name = "s" + str(i)
-#     bottom = 0
-#     for j in range(0, numBins):
-#         ax.bar(
-#             name, sampleData[j], 0.5, bottom, color="C" + str(j), label="Bin " + str(j)
-#         )
-#         bottom += sampleData[j]
-# plt.show()
