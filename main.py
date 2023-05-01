@@ -48,7 +48,6 @@ def MapLabels(labels):
 if not os.path.exists("./trained_model_7"):
     # Create a new model
     # Get the data for all tracks in a directory
-    sampleDirs = [d for d in os.scandir("./samples/fma_small") if d.is_dir()]
     trainData = np.load("train_data_0_19.npy")
     trainLabels = np.load("train_labels_0_19.npy")
     trainLabels = MapLabels(trainLabels)
@@ -70,13 +69,13 @@ if not os.path.exists("./trained_model_7"):
         metrics=["accuracy"],
     )
     # Train the model
-    model.fit(trainData, trainLabels, epochs=1125)
+    model.fit(trainData, trainLabels, epochs=1000)
 
     # Save the model
-    model.save("trained_model_7")
+    # model.save("trained_model_7")
 
 else:
-    model = tf.keras.models.load_model("./trained_model_6")
+    model = tf.keras.models.load_model("./trained_model_7")
 # Test the model
 
 if not os.path.exists("./test_data_0_19.npy"):
